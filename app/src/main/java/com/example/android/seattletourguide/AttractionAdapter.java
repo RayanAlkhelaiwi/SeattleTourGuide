@@ -60,8 +60,9 @@ public class AttractionAdapter extends ArrayAdapter<CityAttraction> {
 
             placeImage.setVisibility(View.VISIBLE);
         } else {
+            placeImage.setVisibility(View.INVISIBLE);
             placeImage.setVisibility(View.GONE);
-            currentAttraction.setPlaceImage(0);
+//            currentAttraction.setPlaceImage(0);
         }
 
         return listItemView;

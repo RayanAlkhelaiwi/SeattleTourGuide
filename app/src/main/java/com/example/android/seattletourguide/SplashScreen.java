@@ -11,20 +11,19 @@ import android.os.Handler;
 
 public class SplashScreen extends Activity {
 
-    private final int SPLASH_SCREEN_LENGTH = 1000;
-
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.splash_screen);
 
+        int SPLASH_SCREEN_LENGTH = 1000;
         new Handler().postDelayed(new Runnable() {
 
             @Override
             public void run() {
                 Intent mainIntent = new Intent(SplashScreen.this, MainActivity.class);
-                SplashScreen.this.startActivity(mainIntent);
-                SplashScreen.this.finish();
+                startActivity(mainIntent);
+                finish();
             }
         }, SPLASH_SCREEN_LENGTH);
     }

@@ -1,21 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.android.seattletourguide.MainActivity">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/view_pager"
+    <!-- Activities category -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabs"
+        <TextView
+            android:id="@+id/activities"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="Activities"
+            android:gravity="center_vertical"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+        <!--style="@style/CategoryStyle"-->
+    </FrameLayout>
+
+    <!-- Coffeehouses category -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:tabMode="fixed" />
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/coffeehouses"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="Coffeehouses"
+            android:gravity="center_vertical"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+        <!--style="@style/CategoryStyle"-->
+    </FrameLayout>
+
+    <!-- Restaurants category -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/restaurants"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="Restaurants"
+            android:gravity="center_vertical"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+        <!--style="@style/CategoryStyle"-->
+    </FrameLayout>
+
+    <!-- Museums category -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/mesuems"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="Museums"
+            android:gravity="center_vertical"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+        <!--style="@style/CategoryStyle"-->
+    </FrameLayout>
 
 </LinearLayout>

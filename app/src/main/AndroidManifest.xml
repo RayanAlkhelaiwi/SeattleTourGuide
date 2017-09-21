@@ -16,6 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+
+        <activity android:name=".MainActivity"
+            android:label="Main Activity"/>
+        <activity
+            android:name=".ActivitiesCategory"
+            android:parentActivityName=".MainActivity"
+            android:label="Activities" />
+        <activity
+            android:name=".CoffeehousesCategory"
+            android:parentActivityName=".MainActivity"
+            android:label="Coffeehouses" />
+        <activity
+            android:name=".RestaurantsCategory"
+            android:parentActivityName=".MainActivity"
+            android:label="Restaurants" />
+        <activity
+            android:name=".MuseumsCategory"
+            android:parentActivityName=".MainActivity"
+            android:label="Museums" />
     </application>
 </manifest>
