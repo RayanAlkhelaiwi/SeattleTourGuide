@@ -14,13 +14,13 @@
 
         <TextView
             android:id="@+id/activities"
-            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="88dp"
+            android:layout_marginLeft="16dp"
             android:background="?android:attr/selectableItemBackground"
-            android:text="Activities"
             android:gravity="center_vertical"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+            android:text="Activities"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
         <!--style="@style/CategoryStyle"-->
     </FrameLayout>
 
@@ -32,13 +32,13 @@
 
         <TextView
             android:id="@+id/coffeehouses"
-            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="88dp"
+            android:layout_marginLeft="16dp"
             android:background="?android:attr/selectableItemBackground"
-            android:text="Coffeehouses"
             android:gravity="center_vertical"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+            android:text="Coffeehouses"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
         <!--style="@style/CategoryStyle"-->
     </FrameLayout>
 
@@ -50,13 +50,13 @@
 
         <TextView
             android:id="@+id/restaurants"
-            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="88dp"
+            android:layout_marginLeft="16dp"
             android:background="?android:attr/selectableItemBackground"
-            android:text="Restaurants"
             android:gravity="center_vertical"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+            android:text="Restaurants"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
         <!--style="@style/CategoryStyle"-->
     </FrameLayout>
 
@@ -68,13 +68,13 @@
 
         <TextView
             android:id="@+id/mesuems"
-            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="88dp"
+            android:layout_marginLeft="16dp"
             android:background="?android:attr/selectableItemBackground"
-            android:text="Museums"
             android:gravity="center_vertical"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+            android:text="Museums"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
         <!--style="@style/CategoryStyle"-->
     </FrameLayout>
 
