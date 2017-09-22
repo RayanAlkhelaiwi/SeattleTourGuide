@@ -30,7 +30,7 @@ public class AttractionAdapter extends ArrayAdapter<CityAttraction> {
 
         if (listItemView == null) {
 
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.attraction_items, parent, false);
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.attraction_item, parent, false);
         }
 
         CityAttraction currentAttraction = getItem(position);
@@ -60,9 +60,7 @@ public class AttractionAdapter extends ArrayAdapter<CityAttraction> {
 
             placeImage.setVisibility(View.VISIBLE);
         } else {
-            placeImage.setVisibility(View.INVISIBLE);
             placeImage.setVisibility(View.GONE);
-//            currentAttraction.setPlaceImage(0);
         }
 
         return listItemView;

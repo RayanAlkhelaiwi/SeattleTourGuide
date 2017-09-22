@@ -6,13 +6,13 @@ package com.example.android.seattletourguide;
 
 public class CityAttraction {
 
-    private final int NO_IMAGE = -1;
+    private final int NO_IMAGE = 0;
     private String mPlaceName;
     private String mPlaceAddress;
     private String mOperationDays;
     private String mOperationHours;
-    private int mPlaceImage = 0;
-    private int mPlaceAudioVideo = 0;
+    private int mPlaceImage;
+    private int mPlaceAudioVideo;
 
     public CityAttraction(String placeName, String placeAddress, String operationDays, String operationHours, int placeAudioVideo) {
         mPlaceName = placeName;
@@ -45,10 +45,6 @@ public class CityAttraction {
 
     public String getmOperationHours() {
         return mOperationHours;
-    }
-
-    public void setPlaceImage(int placeImage) {
-        this.mPlaceImage = placeImage;
     }
 
     public int getmPlaceImage() {

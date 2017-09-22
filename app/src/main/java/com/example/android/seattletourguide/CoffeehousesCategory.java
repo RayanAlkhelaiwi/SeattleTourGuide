@@ -45,7 +45,7 @@ public class CoffeehousesCategory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.city_attraction_list);
+        setContentView(R.layout.attraction_list);
 
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 

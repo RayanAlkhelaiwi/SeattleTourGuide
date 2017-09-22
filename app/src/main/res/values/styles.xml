@@ -8,11 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!-- Style for a tab that displays a category name -->
-    <style name="CategoryTab" parent="Widget.Design.TabLayout">
-        <item name="tabIndicatorColor">@android:color/white</item>
-        <item name="tabSelectedTextColor">@android:color/white</item>
-        <item name="tabBackground">@color/colorPrimary</item>
+    <style name="splash_screen_style">
+        <item name="android:theme">@android:style/Theme.NoTitleBar.Fullscreen</item>
     </style>
 
 

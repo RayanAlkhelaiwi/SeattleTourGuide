@@ -16,7 +16,7 @@ public class SplashScreen extends Activity {
         super.onCreate(bundle);
         setContentView(R.layout.splash_screen);
 
-        int SPLASH_SCREEN_LENGTH = 1000;
+        int SPLASH_SCREEN_LENGTH = 2000;
         new Handler().postDelayed(new Runnable() {
 
             @Override

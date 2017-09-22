@@ -45,18 +45,18 @@ public class MuseumsCategory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.city_attraction_list);
+        setContentView(R.layout.attraction_list);
 
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
 
         final ArrayList<CityAttraction> cityAttractions = new ArrayList<>();
 
-        cityAttractions.add(new CityAttraction("Aviation Museum", "6539 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, -1));
-        cityAttractions.add(new CityAttraction("History Muesum", "3802 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, -1));
-        cityAttractions.add(new CityAttraction("Art Museum", "1727 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, -1));
-        cityAttractions.add(new CityAttraction("Aviation Museum", "6539 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, -1));
-        cityAttractions.add(new CityAttraction("History Muesum", "3802 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, -1));
+        cityAttractions.add(new CityAttraction("Aviation Museum", "6539 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0));
+        cityAttractions.add(new CityAttraction("History Muesum", "3802 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0));
+        cityAttractions.add(new CityAttraction("Art Museum", "1727 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0));
+        cityAttractions.add(new CityAttraction("Aviation Museum", "6539 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0));
+        cityAttractions.add(new CityAttraction("History Muesum", "3802 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0));
 
 
         AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.colorPrimary);

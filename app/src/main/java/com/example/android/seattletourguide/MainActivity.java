@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.GridView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,46 +16,49 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Set the content of the activity to use the activity_main.xml layout file
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.categories_list);
 
-        TextView activities = (TextView) findViewById(R.id.activities);
-        TextView coffeehouses = (TextView) findViewById(R.id.coffeehouses);
-        TextView restaurants = (TextView) findViewById(R.id.restaurants);
-        TextView museums = (TextView) findViewById(R.id.mesuems);
+        ArrayList<Categories> categories = new ArrayList<>();
 
-        activities.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the numbers View is clicked on.
-            @Override
-            public void onClick(View view) {
-                Intent activitiesIntent = new Intent(MainActivity.this, ActivitiesCategory.class);
-                startActivity(activitiesIntent);
-            }
-        });
+        categories.add(new Categories(R.drawable.activities_category, "Activities"));
+        categories.add(new Categories(R.drawable.coffeehouses_category, "Coffeehouses"));
+        categories.add(new Categories(R.drawable.restaurants_category, "Restaurants"));
+        categories.add(new Categories(R.drawable.museums_category, "Museums"));
 
-        coffeehouses.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the numbers View is clicked on.
-            @Override
-            public void onClick(View view) {
-                Intent coffeehousesIntent = new Intent(MainActivity.this, CoffeehousesCategory.class);
-                startActivity(coffeehousesIntent);
-            }
-        });
+        CategoriesAdapter categoriesAdapter = new CategoriesAdapter(this, categories, R.color.colorPrimary);
 
-        restaurants.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the numbers View is clicked on.
-            @Override
-            public void onClick(View view) {
-                Intent restaurantsIntent = new Intent(MainActivity.this, RestaurantsCategory.class);
-                startActivity(restaurantsIntent);
-            }
-        });
+        GridView gridView = (GridView) findViewById(R.id.grid_view);
+        gridView.setAdapter(categoriesAdapter);
 
-        museums.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the numbers View is clicked on.
-            @Override
-            public void onClick(View view) {
-                Intent museumsIntent = new Intent(MainActivity.this, MuseumsCategory.class);
-                startActivity(museumsIntent);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
+                switch (position) {
+                    case 0:
+                        Intent activitiesIntent = new Intent(getApplicationContext(), ActivitiesCategory.class);
+                        startActivity(activitiesIntent);
+                        break;
+
+                    case 1:
+                        Intent coffeehousesIntent = new Intent(getApplicationContext(), CoffeehousesCategory.class);
+                        startActivity(coffeehousesIntent);
+                        break;
+
+                    case 2:
+                        Intent restaurantsIntent = new Intent(getApplicationContext(), RestaurantsCategory.class);
+                        startActivity(restaurantsIntent);
+                        break;
+
+                    case 3:
+                        Intent museumsIntent = new Intent(getApplicationContext(), MuseumsCategory.class);
+                        startActivity(museumsIntent);
+                        break;
+
+                    default:
+                        break;
+                }
             }
         });
     }
