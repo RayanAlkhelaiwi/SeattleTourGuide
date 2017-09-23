@@ -52,14 +52,14 @@ public class MuseumsCategory extends AppCompatActivity {
 
         final ArrayList<CityAttraction> cityAttractions = new ArrayList<>();
 
-        cityAttractions.add(new CityAttraction("Aviation Museum", "6539 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0));
-        cityAttractions.add(new CityAttraction("History Muesum", "3802 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0));
-        cityAttractions.add(new CityAttraction("Art Museum", "1727 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0));
-        cityAttractions.add(new CityAttraction("Aviation Museum", "6539 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0));
-        cityAttractions.add(new CityAttraction("History Muesum", "3802 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0));
+        cityAttractions.add(new CityAttraction("Aviation Museum", "6539 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.museum_list));
+        cityAttractions.add(new CityAttraction("History Muesum", "3802 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.museum_list));
+        cityAttractions.add(new CityAttraction("Art Museum", "1727 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.museum_list));
+        cityAttractions.add(new CityAttraction("Aviation Museum", "6539 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.museum_list));
+        cityAttractions.add(new CityAttraction("History Muesum", "3802 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.museum_list));
 
 
-        AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.colorPrimary);
+        AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.primary);
 
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(attractionAdapter);

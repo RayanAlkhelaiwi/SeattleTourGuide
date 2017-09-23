@@ -52,11 +52,11 @@ public class CoffeehousesCategory extends AppCompatActivity {
 
         final ArrayList<CityAttraction> cityAttractions = new ArrayList<>();
 
-        cityAttractions.add(new CityAttraction("Cozy Coffee", "1010 Mainone Street", "Monday - Sunday", "7:30 AM - 9:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Ultra Coffee", "1001 Maintwo Street", "Monday - Sunday", "9 AM - 10:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Stars Coffee", "1100 Mainthree Street", "Monday - Saturday", "8:30 AM - 8:30 PM", 0, R.mipmap.ic_launcher));
+        cityAttractions.add(new CityAttraction("Cozy Coffee", "1010 Mainone Street", "Monday - Sunday", "7:30 AM - 9:30 PM", 0, R.drawable.coffeehouse_list));
+        cityAttractions.add(new CityAttraction("Ultra Coffee", "1001 Maintwo Street", "Monday - Sunday", "9 AM - 10:30 PM", 0, R.drawable.coffeehouse_list));
+        cityAttractions.add(new CityAttraction("Stars Coffee", "1100 Mainthree Street", "Monday - Saturday", "8:30 AM - 8:30 PM", 0, R.drawable.coffeehouse_list));
 
-        AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.colorPrimary);
+        AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.primary);
 
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(attractionAdapter);

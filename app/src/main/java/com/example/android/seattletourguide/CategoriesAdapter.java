@@ -16,11 +16,8 @@ import java.util.ArrayList;
 
 public class CategoriesAdapter extends ArrayAdapter<Categories> {
 
-    private int mBackgroundColor;
-
-    public CategoriesAdapter(Context context, ArrayList<Categories> categories, int backgroundColor) {
+    public CategoriesAdapter(Context context, ArrayList<Categories> categories) {
         super(context, 0, categories);
-        mBackgroundColor = backgroundColor;
     }
 
     @Override
@@ -36,7 +33,7 @@ public class CategoriesAdapter extends ArrayAdapter<Categories> {
         Categories categories = getItem(position);
 
         View categoryView = listItemView.findViewById(R.id.category_view);
-        categoryView.setBackgroundResource(mBackgroundColor);
+        categoryView.setBackgroundResource(R.color.accent);
 
         ImageView categoryImage = listItemView.findViewById(R.id.category_image);
         categoryImage.setImageResource(categories.getmCategoryImage());

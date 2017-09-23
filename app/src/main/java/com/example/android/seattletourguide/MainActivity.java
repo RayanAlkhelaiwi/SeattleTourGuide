@@ -20,12 +20,12 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Categories> categories = new ArrayList<>();
 
-        categories.add(new Categories(R.drawable.activities_category, "Activities"));
-        categories.add(new Categories(R.drawable.coffeehouses_category, "Coffeehouses"));
-        categories.add(new Categories(R.drawable.restaurants_category, "Restaurants"));
-        categories.add(new Categories(R.drawable.museums_category, "Museums"));
+        categories.add(new Categories(R.drawable.activity_category, "Activities"));
+        categories.add(new Categories(R.drawable.coffeehouse_category, "Coffeehouses"));
+        categories.add(new Categories(R.drawable.restaurant_category, "Restaurants"));
+        categories.add(new Categories(R.drawable.museum_category, "Museums"));
 
-        CategoriesAdapter categoriesAdapter = new CategoriesAdapter(this, categories, R.color.colorPrimary);
+        CategoriesAdapter categoriesAdapter = new CategoriesAdapter(this, categories);
 
         GridView gridView = (GridView) findViewById(R.id.grid_view);
         gridView.setAdapter(categoriesAdapter);

@@ -52,11 +52,11 @@ public class RestaurantsCategory extends AppCompatActivity {
 
         final ArrayList<CityAttraction> cityAttractions = new ArrayList<>();
 
-        cityAttractions.add(new CityAttraction("Binary Bread", "3000 First Street", "Monday - Saturday", "9 AM - 8:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Cozy Coffee", "1001 Second Street", "Monday - Sunday", "9 AM - 8:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Cozy Coffee", "1234 Third Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.mipmap.ic_launcher));
+        cityAttractions.add(new CityAttraction("Binary Bread", "3000 First Street", "Monday - Saturday", "9 AM - 8:30 PM", 0, R.drawable.restaurant_list));
+        cityAttractions.add(new CityAttraction("Cozy Coffee", "1001 Second Street", "Monday - Sunday", "9 AM - 8:30 PM", 0, R.drawable.restaurant_list));
+        cityAttractions.add(new CityAttraction("Cozy Coffee", "1234 Third Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.restaurant_list));
 
-        AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.colorPrimary);
+        AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.primary);
 
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(attractionAdapter);

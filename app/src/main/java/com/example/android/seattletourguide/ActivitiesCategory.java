@@ -52,20 +52,18 @@ public class ActivitiesCategory extends AppCompatActivity {
 
         final ArrayList<CityAttraction> cityAttractions = new ArrayList<>();
 
-        cityAttractions.add(new CityAttraction("Activity A", "1122 Nameone Street", "Saturday - Wednesday", "10:30 AM - 11:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Activity A", "1122 Nameone Street", "Saturday - Wednesday", "10:30 AM - 11:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Activity A", "1122 Nameone Street", "Saturday - Wednesday", "10:30 AM - 11:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Activity A", "1122 Nameone Street", "Saturday - Wednesday", "10:30 AM - 11:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.mipmap.ic_launcher));
-        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.mipmap.ic_launcher));
+        cityAttractions.add(new CityAttraction("Activity A", "1122 Nameone Street", "Saturday - Wednesday", "10:30 AM - 11:30 PM", 0, R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Activity A", "1122 Nameone Street", "Saturday - Wednesday", "10:30 AM - 11:30 PM", 0, R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.drawable.activity_list));
 
-        AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.colorPrimary);
+        AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.secondary_text);
 
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(attractionAdapter);
