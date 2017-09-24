@@ -4,58 +4,47 @@ package com.example.android.seattletourguide;
  * Created by Rean on 9/16/2017.
  */
 
+//Custom class to accept a place's name, address, image, its operation days & hours and an introductory audio, to use in the ArrayList
 public class CityAttraction {
 
-    private final int NO_IMAGE = 0;
     private String mPlaceName;
     private String mPlaceAddress;
     private String mOperationDays;
     private String mOperationHours;
     private int mPlaceImage;
-    private int mPlaceAudioVideo;
+    private int mPlaceAudio;
 
-    public CityAttraction(String placeName, String placeAddress, String operationDays, String operationHours, int placeAudioVideo) {
+    //Constructor
+    public CityAttraction(String placeName, String placeAddress, String operationDays, String operationHours, int placeAudio, int placeImage) {
         mPlaceName = placeName;
         mPlaceAddress = placeAddress;
         mOperationDays = operationDays;
         mOperationHours = operationHours;
-        mPlaceAudioVideo = placeAudioVideo;
-    }
-
-    public CityAttraction(String placeName, String placeAddress, String operationDays, String operationHours, int placeAudioVideo, int placeImage) {
-        mPlaceName = placeName;
-        mPlaceAddress = placeAddress;
-        mOperationDays = operationDays;
-        mOperationHours = operationHours;
-        mPlaceAudioVideo = placeAudioVideo;
+        mPlaceAudio = placeAudio;
         mPlaceImage = placeImage;
     }
 
-    public String getmPlaceName() {
+    public String getPlaceName() {
         return mPlaceName;
     }
 
-    public String getmPlaceAddress() {
+    public String getPlaceAddress() {
         return mPlaceAddress;
     }
 
-    public String getmOperationDays() {
+    public String getOperationDays() {
         return mOperationDays;
     }
 
-    public String getmOperationHours() {
+    public String getOperationHours() {
         return mOperationHours;
     }
 
-    public int getmPlaceImage() {
+    public int getPlaceImage() {
         return mPlaceImage;
     }
 
-    public int getmPlaceAudioVideo() {
-        return mPlaceAudioVideo;
-    }
-
-    public boolean hasImage() {
-        return mPlaceImage != NO_IMAGE;
+    public int getPlaceAudio() {
+        return mPlaceAudio;
     }
 }

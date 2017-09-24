@@ -20,14 +20,18 @@ public class MuseumsCategory extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
     private AudioManager audioManager;
 
+    //On the change of AudioFocus state
     private AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
         @Override
         public void onAudioFocusChange(int focusChange) {
+            //In case of loss transient
             if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
                 mediaPlayer.pause();
                 mediaPlayer.seekTo(0);
+                //In case of AudioFocus gain
             } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
                 mediaPlayer.start();
+                //In case of AudioFocus loss
             } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
                 mediaPlayer.stop();
                 releaseMediaPlayer();
@@ -35,6 +39,7 @@ public class MuseumsCategory extends AppCompatActivity {
         }
     };
 
+    //Release media player once it's completed, or finished
     private MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mp) {
@@ -49,7 +54,7 @@ public class MuseumsCategory extends AppCompatActivity {
 
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
-
+        //ArrayList that holds the places information
         final ArrayList<CityAttraction> cityAttractions = new ArrayList<>();
 
         cityAttractions.add(new CityAttraction("Aviation Museum", "6539 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.museum_list));
@@ -58,12 +63,13 @@ public class MuseumsCategory extends AppCompatActivity {
         cityAttractions.add(new CityAttraction("Aviation Museum", "6539 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.museum_list));
         cityAttractions.add(new CityAttraction("History Muesum", "3802 Museum Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.museum_list));
 
-
+        //Custom adapter that accepts the context, arraylist and the color of the list item
         AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.primary);
 
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(attractionAdapter);
 
+        //On the click of single item, it play the audio
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -72,17 +78,17 @@ public class MuseumsCategory extends AppCompatActivity {
 
                 releaseMediaPlayer();
 
-                // Request audio focus for playback
+                //Request audio focus for playback
                 int result = audioManager.requestAudioFocus(onAudioFocusChangeListener,
-                        // Use the music stream.
+                        //Use the music stream
                         AudioManager.STREAM_MUSIC,
-                        // Request permanent focus.
+                        //Request permanent audio focus
                         AudioManager.AUDIOFOCUS_GAIN);
 
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    //Audio Focus is granted.
+                    //Audio Focus is granted
 
-                    mediaPlayer = MediaPlayer.create(MuseumsCategory.this, attraction.getmPlaceAudioVideo());
+                    mediaPlayer = MediaPlayer.create(MuseumsCategory.this, attraction.getPlaceAudio());
                     mediaPlayer.start();
 
                     mediaPlayer.setOnCompletionListener(onCompletionListener);

@@ -16,8 +16,12 @@ import java.util.ArrayList;
 
 public class CategoriesAdapter extends ArrayAdapter<Categories> {
 
-    public CategoriesAdapter(Context context, ArrayList<Categories> categories) {
+    private int mBackgroundColor; //A variable to accept a certain color
+
+    //Constructor
+    public CategoriesAdapter(Context context, ArrayList<Categories> categories, int backgroundColor) {
         super(context, 0, categories);
+        mBackgroundColor = backgroundColor;
     }
 
     @Override
@@ -25,6 +29,7 @@ public class CategoriesAdapter extends ArrayAdapter<Categories> {
 
         View listItemView = convertView;
 
+        //If the list is null, do the inflater
         if (listItemView == null) {
 
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.categories_item, parent, false);
@@ -32,8 +37,9 @@ public class CategoriesAdapter extends ArrayAdapter<Categories> {
 
         Categories categories = getItem(position);
 
+        //Retrieve the layout built for the items, to change the color
         View categoryView = listItemView.findViewById(R.id.category_view);
-        categoryView.setBackgroundResource(R.color.accent);
+        categoryView.setBackgroundResource(mBackgroundColor);
 
         ImageView categoryImage = listItemView.findViewById(R.id.category_image);
         categoryImage.setImageResource(categories.getmCategoryImage());

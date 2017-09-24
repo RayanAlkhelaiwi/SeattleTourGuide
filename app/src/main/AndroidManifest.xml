@@ -18,23 +18,23 @@
         </activity>
 
         <activity android:name=".MainActivity"
-            android:label="Main Activity"/>
+            android:label="@string/main_page_greeting"/>
         <activity
             android:name=".ActivitiesCategory"
             android:parentActivityName=".MainActivity"
-            android:label="Activities" />
+            android:label="@string/activities_category" />
         <activity
             android:name=".CoffeehousesCategory"
             android:parentActivityName=".MainActivity"
-            android:label="Coffeehouses" />
+            android:label="@string/coffeehouses_category" />
         <activity
             android:name=".RestaurantsCategory"
             android:parentActivityName=".MainActivity"
-            android:label="Restaurants" />
+            android:label="@string/restaurants_category" />
         <activity
             android:name=".MuseumsCategory"
             android:parentActivityName=".MainActivity"
-            android:label="Museums" />
+            android:label="@string/museums_category" />
     </application>
 </manifest>
 

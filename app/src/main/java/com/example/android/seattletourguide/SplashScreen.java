@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+//Splash Screen to appear at the launch of the app (The manifest is edited accordingly)
 public class SplashScreen extends Activity {
 
     @Override
@@ -16,7 +17,7 @@ public class SplashScreen extends Activity {
         super.onCreate(bundle);
         setContentView(R.layout.splash_screen);
 
-        int SPLASH_SCREEN_LENGTH = 2000;
+        int SPLASH_SCREEN_LENGTH = 1000; //To hold the Splash Screen for 1 second (1000 milliseconds)
         new Handler().postDelayed(new Runnable() {
 
             @Override

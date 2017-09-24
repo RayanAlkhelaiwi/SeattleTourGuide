@@ -1,9 +1,19 @@
 <resources>
-    <string name="app_name">Null Name</string>
-    <!--<string name="app_name">Seattle Tour Guide</string>-->
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="TabOne">Tab 1</string>
-    <string name="TabTwo">Tab 2</string>
+    <!--Title name for the application-->
+    <string name="app_name">Seattle Tour</string>
+
+    <!--Category name for Activities-->
+    <string name="activities_category">Activities</string>
+
+    <!--Category name for Coffeehouses-->
+    <string name="coffeehouses_category">Coffeehouses</string>
+
+    <!--Category name for Restaurants-->
+    <string name="restaurants_category">Restaurants</string>
+
+    <!--Category name for Museums-->
+    <string name="museums_category">Museums</string>
+
+    <string name="main_page_greeting">Welcome to Seattle Tour Guide</string>
 </resources>

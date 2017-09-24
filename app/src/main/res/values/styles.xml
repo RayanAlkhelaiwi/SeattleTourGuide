@@ -8,9 +8,82 @@
         <item name="colorAccent">@color/accent</item>
     </style>
 
-    <style name="splash_screen_style">
+    <!--Splash screen style to have no Title bar-->
+    <style name="common_ui_style">
         <item name="android:theme">@android:style/Theme.NoTitleBar.Fullscreen</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/primary_light</item>
     </style>
 
+    <!--Splash screen's image-->
+    <style name="splash_screen_image">
+        <item name="android:layout_width">176dp</item>
+        <item name="android:layout_height">176dp</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <!--Attraction item's image-->
+    <style name="attraction_item_image">
+        <item name="android:layout_width">@dimen/item_height</item>
+        <item name="android:layout_height">@dimen/item_height</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <!--Attraction item style for common attributes-->
+    <style name="attraction_item_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!--Attraction item's operation layout-->
+    <style name="operation_layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">8dp</item>
+    </style>
+
+    <!--Attraction item's place layout-->
+    <style name="place_layout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+
+    <!--Categories item's image-->
+    <style name="categories_item_image">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <!--Categories item's text-->
+    <style name="categories_item_text">
+        <item name="android:layout_below">@id/category_image</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!--Categories list's image-->
+    <style name="categories_list_image">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:layout_marginBottom">32dp</item>
+    </style>
 
 </resources>

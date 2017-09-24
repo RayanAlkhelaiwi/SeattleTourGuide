@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/splash_screen_style"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/primary_light">
+    style="@style/common_ui_style"
+    android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
 
     <ImageView
         android:id="@+id/splash_screen"
-        android:layout_width="176dp"
-        android:layout_height="176dp"
-        android:layout_centerInParent="true"
+        style="@style/splash_screen_image"
         android:src="@drawable/ic_splash_screen" />
 </RelativeLayout>

@@ -16,8 +16,9 @@ import java.util.ArrayList;
 
 public class AttractionAdapter extends ArrayAdapter<CityAttraction> {
 
-    private int mBackgroundColor;
+    private int mBackgroundColor; //A variable to accept a certain color
 
+    //Constructor
     public AttractionAdapter(Context context, ArrayList<CityAttraction> cityAttractions, int backgroundColor) {
         super(context, 0, cityAttractions);
         mBackgroundColor = backgroundColor;
@@ -28,6 +29,7 @@ public class AttractionAdapter extends ArrayAdapter<CityAttraction> {
 
         View listItemView = convertView;
 
+        //If the list is null, do the inflater
         if (listItemView == null) {
 
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.attraction_item, parent, false);
@@ -35,33 +37,28 @@ public class AttractionAdapter extends ArrayAdapter<CityAttraction> {
 
         CityAttraction currentAttraction = getItem(position);
 
+        //Retrieve the layout built for the items, to change the color
         View placeLinearLayout = listItemView.findViewById(R.id.place_linear_layout);
         placeLinearLayout.setBackgroundResource(mBackgroundColor);
 
+        //Retrieve the layout built for the items, to change the color
         View operationLinearLayout = listItemView.findViewById(R.id.operation_linear_layout);
         operationLinearLayout.setBackgroundResource(mBackgroundColor);
 
         TextView placeName = listItemView.findViewById(R.id.place_name);
-        placeName.setText(currentAttraction.getmPlaceName());
+        placeName.setText(currentAttraction.getPlaceName());
 
         TextView placeAddress = listItemView.findViewById(R.id.place_address);
-        placeAddress.setText(currentAttraction.getmPlaceAddress());
+        placeAddress.setText(currentAttraction.getPlaceAddress());
 
         TextView operationDays = listItemView.findViewById(R.id.operation_days);
-        operationDays.setText(currentAttraction.getmOperationDays());
+        operationDays.setText(currentAttraction.getOperationDays());
 
         TextView operationHours = listItemView.findViewById(R.id.operation_hours);
-        operationHours.setText(currentAttraction.getmOperationHours());
+        operationHours.setText(currentAttraction.getOperationHours());
 
         ImageView placeImage = listItemView.findViewById(R.id.place_image);
-
-        if (currentAttraction.hasImage()) {
-            placeImage.setImageResource(currentAttraction.getmPlaceImage());
-
-            placeImage.setVisibility(View.VISIBLE);
-        } else {
-            placeImage.setVisibility(View.GONE);
-        }
+        placeImage.setImageResource(currentAttraction.getPlaceImage());
 
         return listItemView;
     }
