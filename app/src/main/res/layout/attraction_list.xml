@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/list"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/primary_light"
-    android:drawSelectorOnTop="true"
-    android:orientation="vertical" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/common_ui_style"
+    android:background="@color/primary_light">
+
+    <ImageView
+        android:id="@+id/attraction_picture"
+        style="@style/attraction_list_image"
+        android:src="@drawable/list_image" />
+
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/list"
+        android:layout_below="@id/attraction_picture"
+        android:layout_width="match_parent"
+       android:layout_height="match_parent"
+        android:drawSelectorOnTop="true"
+        android:orientation="vertical" />
+
+</RelativeLayout>

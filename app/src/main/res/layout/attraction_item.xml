@@ -62,7 +62,7 @@
 
             <ImageView
                 style="@style/location_icon"
-                android:src="@drawable/ic_location" />
+                android:src="@mipmap/ic_location" />
 
         </RelativeLayout>
 

@@ -30,10 +30,14 @@ public class CoffeehousesCategory extends AppCompatActivity {
         //ArrayList that holds the places information
         final ArrayList<CityAttraction> cityAttractions = new ArrayList<>();
 
-        cityAttractions.add(new CityAttraction("Seattle Coffee Works", "107 Pike St.", "Monday - Sunday", "6:30 AM - 7:30 PM", R.drawable.coffeehouse_list));
-        cityAttractions.add(new CityAttraction("Milstead & Co.", "1001 Maintwo Street", "Monday - Sunday", "6:00 AM - 6:00 PM", R.drawable.coffeehouse_list));
-        cityAttractions.add(new CityAttraction("La Marzocco Cafe", "472 1st Ave N", "Monday - Sunday", "7:00 AM - 6:00 PM", R.drawable.coffeehouse_list));
-        cityAttractions.add(new CityAttraction("Starbucks (Original)", "1912 Pike Pl", "Monday - Sunday", "6:00 AM - 9:00 PM", R.drawable.coffeehouse_list));
+        cityAttractions.add(new CityAttraction(getString(R.string.coffeehouses_first_place_name), getString(R.string.coffeehouses_first_place_address),
+                getString(R.string.coffeehouses_first_place_days), getString(R.string.coffeehouses_first_place_hours), R.mipmap.coffeehouse_list));
+        cityAttractions.add(new CityAttraction(getString(R.string.coffeehouses_second_place_name), getString(R.string.coffeehouses_second_place_address),
+                getString(R.string.coffeehouses_second_place_days), getString(R.string.coffeehouses_second_place_hours), R.mipmap.coffeehouse_list));
+        cityAttractions.add(new CityAttraction(getString(R.string.coffeehouses_third_place_name), getString(R.string.coffeehouses_third_place_address),
+                getString(R.string.coffeehouses_third_place_days), getString(R.string.coffeehouses_third_place_hours), R.mipmap.coffeehouse_list));
+        cityAttractions.add(new CityAttraction(getString(R.string.coffeehouses_fourth_place_name), getString(R.string.coffeehouses_fourth_place_address),
+                getString(R.string.coffeehouses_fourth_place_days), getString(R.string.coffeehouses_fourth_place_hours), R.mipmap.coffeehouse_list));
 
         //Custom adapter that accepts the context, ArrayList and the color of the list item
         AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.primary);

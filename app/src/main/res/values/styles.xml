@@ -63,6 +63,14 @@
         <item name="android:layout_centerInParent">true</item>
     </style>
 
+    <style name="attraction_list_image">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:paddingTop">48dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
     <!--Categories item's image-->
     <style name="categories_item_image">
         <item name="android:layout_width">100dp</item>

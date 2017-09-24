@@ -30,10 +30,14 @@ public class MuseumsCategory extends AppCompatActivity {
         //ArrayList that holds the places information
         final ArrayList<CityAttraction> cityAttractions = new ArrayList<>();
 
-        cityAttractions.add(new CityAttraction("Music Project Museum", "325 5th Ave N", "Monday - Sunday", "10:00 AM - 5:00 PM", R.drawable.museum_list));
-        cityAttractions.add(new CityAttraction("Art Museum", "1300 1st Ave", "Wednesday - Sunday", "10:00 AM - 5:00 PM", R.drawable.museum_list));
-        cityAttractions.add(new CityAttraction("Museum of Flight", "9404 E Marginal Way S", "Monday - Sunday", "10:00 AM - 5:00 PM", R.drawable.museum_list));
-        cityAttractions.add(new CityAttraction("Museum of History & Industry", "860 Terry Ave N", "Monday - Sunday", "10:00 AM - 5:00 PM", R.drawable.museum_list));
+        cityAttractions.add(new CityAttraction(getString(R.string.museums_first_place_name), getString(R.string.museums_first_place_address),
+                getString(R.string.museums_first_place_days), getString(R.string.museums_first_place_hours), R.mipmap.museum_list));
+        cityAttractions.add(new CityAttraction(getString(R.string.museums_second_place_name), getString(R.string.museums_second_place_address),
+                getString(R.string.museums_second_place_days), getString(R.string.museums_second_place_hours), R.mipmap.museum_list));
+        cityAttractions.add(new CityAttraction(getString(R.string.museums_third_place_name), getString(R.string.museums_third_place_address),
+                getString(R.string.museums_third_place_days), getString(R.string.museums_third_place_hours), R.mipmap.museum_list));
+        cityAttractions.add(new CityAttraction(getString(R.string.museums_fourth_place_name), getString(R.string.museums_fourth_place_address),
+                getString(R.string.museums_fourth_place_days), getString(R.string.museums_fourth_place_hours), R.mipmap.museum_list));
 
         //Custom adapter that accepts the context, arraylist and the color of the list item
         AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.primary);

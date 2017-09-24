@@ -6,5 +6,5 @@
     <ImageView
         android:id="@+id/splash_screen"
         style="@style/splash_screen_image"
-        android:src="@drawable/ic_splash_screen" />
+        android:src="@mipmap/ic_splash_screen" />
 </RelativeLayout>

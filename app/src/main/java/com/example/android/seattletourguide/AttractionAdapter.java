@@ -64,6 +64,8 @@ public class AttractionAdapter extends ArrayAdapter<CityAttraction> {
         ImageView placeImage = listItemView.findViewById(R.id.place_image);
         placeImage.setImageResource(currentAttraction.getPlaceImage());
 
+
+
         return listItemView;
     }
 }

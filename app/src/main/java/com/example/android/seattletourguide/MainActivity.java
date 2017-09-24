@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Categories> categories = new ArrayList<>();
 
         //An ArrayList that holds the categories' information
-        categories.add(new Categories(R.drawable.activity_category, R.string.activities_category));
-        categories.add(new Categories(R.drawable.coffeehouse_category, R.string.coffeehouses_category));
-        categories.add(new Categories(R.drawable.restaurant_category, R.string.restaurants_category));
-        categories.add(new Categories(R.drawable.museum_category, R.string.museums_category));
+        categories.add(new Categories(R.mipmap.activity_category, R.string.activities_category));
+        categories.add(new Categories(R.mipmap.coffeehouse_category, R.string.coffeehouses_category));
+        categories.add(new Categories(R.mipmap.restaurant_category, R.string.restaurants_category));
+        categories.add(new Categories(R.mipmap.museum_category, R.string.museums_category));
 
         //Custom adapter that accepts the context, ArrayList and the color of the category
         CategoriesAdapter categoriesAdapter = new CategoriesAdapter(this, categories, R.color.accent);
