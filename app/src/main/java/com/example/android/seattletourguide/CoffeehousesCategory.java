@@ -1,8 +1,8 @@
 package com.example.android.seattletourguide;
 
 import android.content.Context;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by Rean on 9/21/2017.
@@ -17,49 +18,22 @@ import java.util.ArrayList;
 
 public class CoffeehousesCategory extends AppCompatActivity {
 
-    private MediaPlayer mediaPlayer;
-    private AudioManager audioManager;
-
-    //On the change of AudioFocus state
-    private AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
-        @Override
-        public void onAudioFocusChange(int focusChange) {
-            //In case of loss transient
-            if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
-                mediaPlayer.pause();
-                mediaPlayer.seekTo(0);
-                //In case of AudioFocus gain
-            } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
-                mediaPlayer.start();
-                //In case of AudioFocus loss
-            } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
-                mediaPlayer.stop();
-                releaseMediaPlayer();
-            }
-        }
-    };
-
-    //Release media player once it's completed, or finished
-    private MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
-        @Override
-        public void onCompletion(MediaPlayer mp) {
-            releaseMediaPlayer();
-        }
-    };
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.attraction_list);
 
-        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        context = this;
 
         //ArrayList that holds the places information
         final ArrayList<CityAttraction> cityAttractions = new ArrayList<>();
 
-        cityAttractions.add(new CityAttraction("Cozy Coffee", "1010 Mainone Street", "Monday - Sunday", "7:30 AM - 9:30 PM", 0, R.drawable.coffeehouse_list));
-        cityAttractions.add(new CityAttraction("Ultra Coffee", "1001 Maintwo Street", "Monday - Sunday", "9 AM - 10:30 PM", 0, R.drawable.coffeehouse_list));
-        cityAttractions.add(new CityAttraction("Stars Coffee", "1100 Mainthree Street", "Monday - Saturday", "8:30 AM - 8:30 PM", 0, R.drawable.coffeehouse_list));
+        cityAttractions.add(new CityAttraction("Seattle Coffee Works", "107 Pike St.", "Monday - Sunday", "6:30 AM - 7:30 PM", R.drawable.coffeehouse_list));
+        cityAttractions.add(new CityAttraction("Milstead & Co.", "1001 Maintwo Street", "Monday - Sunday", "6:00 AM - 6:00 PM", R.drawable.coffeehouse_list));
+        cityAttractions.add(new CityAttraction("La Marzocco Cafe", "472 1st Ave N", "Monday - Sunday", "7:00 AM - 6:00 PM", R.drawable.coffeehouse_list));
+        cityAttractions.add(new CityAttraction("Starbucks (Original)", "1912 Pike Pl", "Monday - Sunday", "6:00 AM - 9:00 PM", R.drawable.coffeehouse_list));
 
         //Custom adapter that accepts the context, ArrayList and the color of the list item
         AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.primary);
@@ -67,46 +41,38 @@ public class CoffeehousesCategory extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(attractionAdapter);
 
-        //On the click of single item, it play the audio
+        //OnClick Item Listener for each item of the list view (Specified by the position), to have an explicit intent to move to place's location
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                CityAttraction attraction = cityAttractions.get(position);
+                switch (position) {
+                    case 0: //Intent for the first list item, for the location
+                        String uriOne = String.format(Locale.ENGLISH, "geo:%f,%f", 47.6089, -122.3395);
+                        Intent activityOne = new Intent(Intent.ACTION_VIEW, Uri.parse(uriOne));
+                        context.startActivity(activityOne);
+                        break;
 
-                releaseMediaPlayer();
+                    case 1: //Intent for the following list item, for the location
+                        String uriTwo = String.format(Locale.ENGLISH, "geo:%f,%f", 47.6494, -122.3478);
+                        Intent activityTwo = new Intent(Intent.ACTION_VIEW, Uri.parse(uriTwo));
+                        context.startActivity(activityTwo);
+                        break;
 
-                //Request audio focus for playback
-                int result = audioManager.requestAudioFocus(onAudioFocusChangeListener,
-                        //Use the music stream
-                        AudioManager.STREAM_MUSIC,
-                        //Request permanent audio focus
-                        AudioManager.AUDIOFOCUS_GAIN);
+                    case 2: //Intent for the following list item, for the location
+                        String uriThree = String.format(Locale.ENGLISH, "geo:%f,%f", 47.6228, -122.3552);
+                        Intent activityThree = new Intent(Intent.ACTION_VIEW, Uri.parse(uriThree));
+                        context.startActivity(activityThree);
+                        break;
 
-                if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    //Audio Focus is granted
-
-                    mediaPlayer = MediaPlayer.create(CoffeehousesCategory.this, attraction.getPlaceAudio());
-                    mediaPlayer.start();
-
-                    mediaPlayer.setOnCompletionListener(onCompletionListener);
+                    case 3: //Intent for the following list item, for the location
+                        String uriFour = String.format(Locale.ENGLISH, "geo:%f,%f", 47.6101, -122.3425);
+                        Intent activityFour = new Intent(Intent.ACTION_VIEW, Uri.parse(uriFour));
+                        context.startActivity(activityFour);
+                        break;
+                    default:
+                        break;
                 }
             }
         });
-    }
-
-    public void releaseMediaPlayer() {
-        if (mediaPlayer != null) {
-
-            mediaPlayer.release();
-            mediaPlayer = null;
-            audioManager.abandonAudioFocus(onAudioFocusChangeListener);
-        }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseMediaPlayer();
     }
 }

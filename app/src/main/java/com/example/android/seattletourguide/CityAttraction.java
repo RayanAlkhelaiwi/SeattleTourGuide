@@ -12,15 +12,13 @@ public class CityAttraction {
     private String mOperationDays;
     private String mOperationHours;
     private int mPlaceImage;
-    private int mPlaceAudio;
 
     //Constructor
-    public CityAttraction(String placeName, String placeAddress, String operationDays, String operationHours, int placeAudio, int placeImage) {
+    public CityAttraction(String placeName, String placeAddress, String operationDays, String operationHours, int placeImage) {
         mPlaceName = placeName;
         mPlaceAddress = placeAddress;
         mOperationDays = operationDays;
         mOperationHours = operationHours;
-        mPlaceAudio = placeAudio;
         mPlaceImage = placeImage;
     }
 
@@ -42,9 +40,5 @@ public class CityAttraction {
 
     public int getPlaceImage() {
         return mPlaceImage;
-    }
-
-    public int getPlaceAudio() {
-        return mPlaceAudio;
     }
 }

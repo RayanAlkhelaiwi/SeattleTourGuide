@@ -45,6 +45,10 @@ public class AttractionAdapter extends ArrayAdapter<CityAttraction> {
         View operationLinearLayout = listItemView.findViewById(R.id.operation_linear_layout);
         operationLinearLayout.setBackgroundResource(mBackgroundColor);
 
+        //Retrieve the layout built for the items, to change the color
+        View locationLinearLayout = listItemView.findViewById(R.id.location_linear_layout);
+        locationLinearLayout.setBackgroundResource(mBackgroundColor);
+
         TextView placeName = listItemView.findViewById(R.id.place_name);
         placeName.setText(currentAttraction.getPlaceName());
 

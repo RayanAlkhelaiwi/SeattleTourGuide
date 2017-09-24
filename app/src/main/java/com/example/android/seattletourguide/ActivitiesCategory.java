@@ -20,36 +20,6 @@ public class ActivitiesCategory extends AppCompatActivity {
 
     private Context context;
 
-//    private MediaPlayer mediaPlayer;
-//    private AudioManager audioManager;
-//
-//    //On the change of AudioFocus state
-//    private AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
-//        @Override
-//        public void onAudioFocusChange(int focusChange) {
-//            //In case of loss transient
-//            if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
-//                mediaPlayer.pause();
-//                mediaPlayer.seekTo(0);
-//            //In case of AudioFocus gain
-//            } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
-//                mediaPlayer.start();
-//            //In case of AudioFocus loss
-//            } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
-//                mediaPlayer.stop();
-//                releaseMediaPlayer();
-//            }
-//        }
-//    };
-//
-//    //Release media player once it's completed, or finished
-//    private MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
-//        @Override
-//        public void onCompletion(MediaPlayer mp) {
-//            releaseMediaPlayer();
-//        }
-//    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,21 +27,13 @@ public class ActivitiesCategory extends AppCompatActivity {
 
         context = this;
 
-//        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-
         //ArrayList that holds the places' information
         final ArrayList<CityAttraction> cityAttractions = new ArrayList<>();
 
-        cityAttractions.add(new CityAttraction("Activity A", "1122 Nameone Street", "Saturday - Wednesday", "10:30 AM - 11:30 PM", 0, R.drawable.activity_list));
-        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.activity_list));
-        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.drawable.activity_list));
-        cityAttractions.add(new CityAttraction("Activity A", "1122 Nameone Street", "Saturday - Wednesday", "10:30 AM - 11:30 PM", 0, R.drawable.activity_list));
-        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.activity_list));
-        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.drawable.activity_list));
-        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.activity_list));
-        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.drawable.activity_list));
-        cityAttractions.add(new CityAttraction("Activity B", "2233 Nametwo Street", "Monday - Friday", "9 AM - 8:30 PM", 0, R.drawable.activity_list));
-        cityAttractions.add(new CityAttraction("Activity C", "3344 Namethree Street", "Monday - Saturday", "11 AM - 6:30 PM", 0, R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Space Needle", "400 Broad St.", "Monday - Sunday", "9:00 AM - 8:00 PM", R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Chihuly Garden and Glass", "305 Harrison St.", "Monday - Sunday", "9:00 AM - 7:00 PM", R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Snoqualmie Falls", "6501 Railroad Ave SE", "Monday - Sunday", "7:00 AM - 6:00 PM", R.drawable.activity_list));
+        cityAttractions.add(new CityAttraction("Benaroya Hall", "200 University St.", "Monday - Friday", "5:30 AM - 7:00 PM", R.drawable.activity_list));
 
         //Custom adapter that accepts the context, ArrayList and the color of the list item
         AttractionAdapter attractionAdapter = new AttractionAdapter(this, cityAttractions, R.color.primary);
@@ -79,68 +41,38 @@ public class ActivitiesCategory extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(attractionAdapter);
 
+        //OnClick Item Listener for each item of the list view (Specified by the position), to have an explicit intent to move to place's location
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
                 switch (position) {
-                    case 0: //For the first list item
-                        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", 47.6205, -122.3493);
-                        Intent placeAddressIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                        context.startActivity(placeAddressIntent);
+                    case 0: //Intent for the first list item, for the location
+                        String uriOne = String.format(Locale.ENGLISH, "geo:%f,%f", 47.6205, -122.3493);
+                        Intent activityOne = new Intent(Intent.ACTION_VIEW, Uri.parse(uriOne));
+                        context.startActivity(activityOne);
+                        break;
+
+                    case 1: //Intent for the following list item, for the location
+                        String uriTwo = String.format(Locale.ENGLISH, "geo:%f,%f", 47.6206, -122.3505);
+                        Intent activityTwo = new Intent(Intent.ACTION_VIEW, Uri.parse(uriTwo));
+                        context.startActivity(activityTwo);
+                        break;
+
+                    case 2: //Intent for the following list item, for the location
+                        String uriThree = String.format(Locale.ENGLISH, "geo:%f,%f", 47.542932, -121.836834);
+                        Intent activityThree = new Intent(Intent.ACTION_VIEW, Uri.parse(uriThree));
+                        context.startActivity(activityThree);
+                        break;
+
+                    case 3: //Intent for the following list item, for the location
+                        String uriFour = String.format(Locale.ENGLISH, "geo:%f,%f", 47.6081, -122.3370);
+                        Intent activityFour = new Intent(Intent.ACTION_VIEW, Uri.parse(uriFour));
+                        context.startActivity(activityFour);
                         break;
                     default:
                         break;
                 }
             }
         });
-
-//        //On the click of single item, it play the audio
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//
-//
-//                String uri = String.format(Locale.ENGLISH, "geo:%f,%f", 47.6205, 122.3493);
-//                Intent placeAddress = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-//                context.startActivity(placeAddress);
-//                CityAttraction attraction = cityAttractions.get(position);
-//
-//                releaseMediaPlayer();
-//
-//                //Request audio focus for playback
-//                int result = audioManager.requestAudioFocus(onAudioFocusChangeListener,
-//                        //Use the music stream
-//                        AudioManager.STREAM_MUSIC,
-//                        //Request permanent audio focus
-//                        AudioManager.AUDIOFOCUS_GAIN);
-//
-//                if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-//                    //Audio Focus is granted
-//
-//                    mediaPlayer = MediaPlayer.create(ActivitiesCategory.this, attraction.getPlaceAudio());
-//                    mediaPlayer.start();
-//
-//                    mediaPlayer.setOnCompletionListener(onCompletionListener);
-//                }
-//            }
-//        });
-//    }
-//
-//    public void releaseMediaPlayer() {
-//        if (mediaPlayer != null) {
-//
-//            mediaPlayer.release();
-//            mediaPlayer = null;
-//            audioManager.abandonAudioFocus(onAudioFocusChangeListener);
-//        }
-//    }
-//
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        releaseMediaPlayer();
-//    }
     }
 }

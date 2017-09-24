@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         GridView gridView = (GridView) findViewById(R.id.grid_view);
         gridView.setAdapter(categoriesAdapter);
 
-        //OnClick Listener for each item of the grid view (Specified by the position), to have an explicit intent to move to specific class
+        //OnClick Item Listener for each item of the grid view (Specified by the position), to have an explicit intent to move to specific class
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
