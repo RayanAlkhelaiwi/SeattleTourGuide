@@ -7,9 +7,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
         //Set the content of the activity to use the categories_list.xml layout file
         setContentView(R.layout.categories_list);
+
+        // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
+        MobileAds.initialize(getApplicationContext(), getString(R.string.sample_admob_app_id));
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         ArrayList<Categories> categories = new ArrayList<>();
 

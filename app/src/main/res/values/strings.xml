@@ -80,4 +80,6 @@
     <string name="restaurants_first_place_address">1225 4th Ave</string>
     <string name="restaurants_first_place_days">Monday - Sunday</string>
     <string name="restaurants_first_place_hours">11:00 AM - 11:00 PM</string>
+    <string name="sample_admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="sample_adunit_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>
