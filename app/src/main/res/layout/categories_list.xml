@@ -7,7 +7,7 @@
         style="@style/categories_list_image"
         android:src="@mipmap/ic_main" />
 
-    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    <GridView
         android:id="@+id/grid_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,5 +30,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/sample_adunit_id"/>
+        ads:adUnitId="@string/sample_adunit_id" />
 </RelativeLayout>
